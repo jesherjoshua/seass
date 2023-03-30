@@ -39,9 +39,9 @@ def handler(event, context):
     vid_name=file['name']
 
 
-    download_blob('seass',vid_name,'/tmp/'+vid_name)
+    download_blob('seass',vid_name,vid_name)
     print("Video Input Downloaded")
-    cmd=f"python3 yolov5/detect.py --weights 'yolov5/yolov5weights.pt' --source '/tmp/{vid_name}' --class 0"
+    cmd=f"python3 yolov5/detect.py --weights 'yolov5/yolov5weights.pt' --source '{vid_name}' --class 0"
     os.system(cmd)
     print("YoloV5 run success")
     print("Running Yolo")
