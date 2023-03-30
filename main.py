@@ -38,12 +38,12 @@ def handler(event, context):
     file = event
     vid_name=file['name']
 
-    print("YoloV5 import success")
 
     download_blob('seass',vid_name,'/tmp/'+vid_name)
     print("Video Input Downloaded")
     cmd=f"python3 yolov5/detect.py --weights 'yolov5/yolov5weights.pt' --source '/tmp/{vid_name}' --class 0"
     os.system(cmd)
+    print("YoloV5 run success")
     print("Running Yolo")
     fh=open('count.txt','r')
     txt=fh.read()
