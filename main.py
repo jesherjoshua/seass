@@ -1,5 +1,4 @@
 import os
-import tensorflow as tf
 from google.cloud import storage
 
 
